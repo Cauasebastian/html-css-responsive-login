@@ -92,8 +92,9 @@ img{
     bottom: 1rem;
     width: 100%;
 
-    background-color: hsla(0,0%,100%,0.1);
+    background-color: hsl(244,16%,92%,.6);
     border: 2px solid hsla(0,0%,100%, .7);
+    backdrop-filter: blur(15px);
 
     padding: 2rem 1rem;
     border-radius: 1rem;
@@ -134,14 +135,17 @@ img{
 
 .login__icon{
     font-size: 1.5rem;
-    color: var(--first-color-lighten);
+    color: var(--first-color);
 }
 .showpassword__icon {
     font-size: 1.5rem;
-    color: var(--first-color-lighten);
+    color: var(--first-color);
     position: absolute;
     right: 2rem;
     cursor: pointer;
+}
+.showpassword__icon:hover{
+    color: var(--first-color-dark);
 }
 
 .login__input{
@@ -169,7 +173,10 @@ img{
     margin-top: .5rem;
     font-size: var(--small-font-size);
     font-weight: 600;
-    color: var(--first-color-light);
+    color: var(--first-color);
+}
+.login__forgot:hover{
+    color: var(--first-color-dark);
 }
 
 .login__button{
@@ -200,6 +207,9 @@ img{
 .login__signin, .login__signup{
     color: var(--first-color);
     cursor: pointer;
+}
+.login__signin:hover, .login__signup:hover{
+    color: var(--first-color-dark);
 }
 
 .login__social{
