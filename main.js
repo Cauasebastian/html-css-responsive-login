@@ -12,15 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
             showPasswordIcon.addEventListener("click", function () {
                 if (passwordInput.type === "password") {
                     passwordInput.type = "text";
+                    showPasswordIcon.className = 'bx bx-show showpassword__icon';
                 } else {
                     passwordInput.type = "password";
+                    showPasswordIcon.className = 'bx bx-hide showpassword__icon';
                 }
             });
         }
     }
 
     function resetPasswordVisibility(form) {
-        // Quando ocorrer a troca entre Sign In e Sign Up, redefine a visibilidade da senha para "hidden"
         const passwordInput = form.querySelector('.login__input[type="password"]');
         if (passwordInput) {
             passwordInput.type = "password";
@@ -43,11 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
         resetPasswordVisibility(loginIn);
     });
 
-    // Adiciona comportamento de alternância para exibir/ocultar senha
     addPasswordToggleBehavior("passwordInputLogin", "showPasswordLogin");
     addPasswordToggleBehavior("passwordInputRegister", "showPasswordRegister");
 
-    // Adiciona comportamento para resetar a visibilidade da senha ao clicar nos links Sign In e Sign Up
     signIn.addEventListener('click', () => resetPasswordVisibility(loginIn));
     signUp.addEventListener('click', () => resetPasswordVisibility(loginUp));
 });

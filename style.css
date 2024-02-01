@@ -28,12 +28,13 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     color: var(--first-color-dark);
+
 }
 
 h1{
@@ -51,12 +52,23 @@ img{
 }
 
 /*===== LOGIN =====*/
+.login__bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: -1;
+}
 .login{
     display: grid;
     grid-template-columns: 100%;
     height: 100vh;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+    z-index: 1;
 }
 
 .login__content{
@@ -71,25 +83,26 @@ img{
     width: 310px;
     margin-top: 1.5rem;
 }
-
 .login__forms{
     position: relative;
     height: 368px;
 }
-
 .login__registre, .login__create{
     position: absolute;
     bottom: 1rem;
     width: 100%;
-    background-color: var(--first-color-lighten);
+
+    background-color: hsla(0,0%,100%,0.1);
+    border: 2px solid hsla(0,0%,100%, .7);
+
     padding: 2rem 1rem;
     border-radius: 1rem;
     text-align: center;
     box-shadow: 0 8px 20px rgba(35,0,77,.2);
     animation-duration: .4s;
     animation-name: animate-login;
+    z-index: 1;
 }
-
 @keyframes animate-login{
     0%{
         transform: scale(1,1);
@@ -115,15 +128,17 @@ img{
     background-color: #FFF;
     margin-top: 1rem;
     border-radius: .5rem;
+    background-color: hsla(0,0%,100%,0.1);
+    border: 2px solid hsla(0,0%,100%, .7);
 }
 
 .login__icon{
     font-size: 1.5rem;
-    color: var(--first-color);
+    color: var(--first-color-lighten);
 }
 .showpassword__icon {
     font-size: 1.5rem;
-    color: var(--first-color);
+    color: var(--first-color-lighten);
     position: absolute;
     right: 2rem;
     cursor: pointer;
@@ -135,12 +150,16 @@ img{
     font-size: var(--normal-font-size);
     font-weight: 700;
     color: var(--first-color-dark);
+
+    background-color: hsla(0,0%,0%,0);
+
 }
 
 .login__input::placeholder{
     font-size: var(--normal-font-size);
     font-family: var(--body-font);
-    color: var(--first-color-light);
+    color: var(--first-color-dark);
+
 }
 
 .login__forgot{
@@ -228,9 +247,11 @@ img{
         display: flex;
         width: 600px;
         height: 588px;
-        background-color: var(--first-color-lighten);
+        background-color: hsla(0,0%,00%,0);
+        border: 2px solid hsla(0,0%,100%, 0.7);
         border-radius: 1rem;
         padding-left: 1rem;
+        z-index: 0;
     }
 
     .login__img img{
